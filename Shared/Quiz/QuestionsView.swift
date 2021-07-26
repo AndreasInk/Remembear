@@ -14,7 +14,9 @@ struct QuestionsView: View {
     @Binding var i: Int
     @Binding var quiz: Quiz
     @Binding var showCorrect: Bool
+    @Binding var showQuiz: Bool
       var body: some View {
+          ZStack {
           VStack {
           ScrollView {
               VStack(alignment: .leading) {
@@ -27,9 +29,9 @@ struct QuestionsView: View {
                           VStack {
                           HStack {
                               Text(quiz.questions[questionIndex].title)
-                                  .font(.custom("Montserrat Bold", size: 18)).foregroundColor(Color(.white))
+                                  .font(.custom("Montserrat Bold", size: 18))
                               .multilineTextAlignment(.leading)
-                              .foregroundColor(.white)
+                              .foregroundColor(Color("Text"))
                               Spacer()
                              
                       }
@@ -63,7 +65,9 @@ struct QuestionsView: View {
               
           } .padding()
               .frame(maxWidth: .infinity, alignment: .leading)
-              .background(Color("Secondary"))
+              .background(Color("card"))
               .edgesIgnoringSafeArea(.all)
       }
+          
   }
+}

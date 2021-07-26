@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct QuizView: View {
-    @State var quiz = Quiz(id: UUID().uuidString, questions: [Question(id: UUID().uuidString, title: "Yes", question: "Question", answers: ["A", "B", "C"], answer: "A", selected: "", reason: "oooooooffffffFFFffFF", noteURL: "", tags: ["Ya"]), Question(id: UUID().uuidString, title: "Hello World", question: "Question2", answers: ["A", "B", "C"], answer: "A", selected: "", reason: "oooooooffffffFFFffFF", noteURL: "", tags: ["Ya"])])
+    @State var quiz = Quiz(id: UUID().uuidString, title: "", questions: [Question(id: UUID().uuidString, title: "Yes", question: "Question", answers: ["A", "B", "C"], answer: "A", selected: "", reason: "oooooooffffffFFFffFF", noteURL: "", tags: ["Ya"]), Question(id: UUID().uuidString, title: "Hello World", question: "Question2", answers: ["A", "B", "C"], answer: "A", selected: "", reason: "oooooooffffffFFFffFF", noteURL: "", tags: ["Ya"])])
    
     @Binding var i: Int
     @State var done = false
@@ -17,6 +17,7 @@ struct QuizView: View {
     @State var gridLayout: [GridItem] = [ ]
     @State private var orientation = UIDeviceOrientation.unknown
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+    @Binding var showQuiz: Bool
     var body: some View {
         let drag = DragGesture()
                    .onEnded {
@@ -66,15 +67,16 @@ struct QuizView: View {
               
           
            // LazyVGrid(columns: gridLayout, spacing: 5) {
-               
+            ScrollView(.vertical, showsIndicators: false) {
             VStack {
-               
+                Spacer(minLength: 100)
                 QuizDetails(question: $quiz.questions[i], questions: $quiz.questions, i: $i, done: $done, showCorrect: $showCorrect)
                   
                        
             
           
                 if showCorrect {
+                    
                     ZStack {
                     CorrectView(question: $quiz.questions[i])
                         VStack {
@@ -96,9 +98,11 @@ struct QuizView: View {
                         .buttonStyle(BlueStyle())
                         .padding()
                     }
+                    
                     }
                 
-            }
+                }
+            } .padding(.top, 60)
             
               
             }
@@ -114,7 +118,7 @@ struct QuizView: View {
 //            }
             if showQuestions {
                 HStack {
-                    QuestionsView(i: $i, quiz: $quiz, showCorrect: $showCorrect)
+                    QuestionsView(i: $i, quiz: $quiz, showCorrect: $showCorrect, showQuiz: $showQuiz)
                     .frame(width: 240)
                     
                  
@@ -131,10 +135,18 @@ struct QuizView: View {
                     }) {
                         Image(systemName: "sidebar.squares.left")
                             .padding()
-                            .foregroundColor(showQuestions ? Color(.white) : Color("Primary"))
+                            .foregroundColor(Color("Primary"))
                     }
                     Spacer()
-                    
+                    Button(action: {
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            showQuiz.toggle()
+                        }
+                    }) {
+                        Image(systemName: "xmark")
+                            .padding()
+                            .foregroundColor(Color("Primary"))
+                    }
                 } .padding()
                 Spacer()
             }  .zIndex(1)

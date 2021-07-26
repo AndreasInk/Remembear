@@ -28,7 +28,8 @@ struct QuizBtn: View {
             showCorrect = true
         }) {
             Text(text)
-                .font(.custom("Montserrat Bold", size: question.selected.isEmpty ? 18 : question.selected == text ? 24 : 18))
+                //.font(.custom("Montserrat Bold", size: question.selected.isEmpty ? 18 : question.selected == text ? 24 : 18))
+                .font(.custom("Montserrat Bold", size: 18))
                 .padding(.horizontal)
                 .foregroundColor(.white)
         } //.disabled(question.selected != "" ? true : false)

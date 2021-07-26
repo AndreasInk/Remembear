@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CorrectView: View {
     @Binding var question: Question
+    @State var edit: Bool = false
     var body: some View {
         
         VStack {
@@ -34,7 +35,7 @@ struct CorrectView: View {
             .padding()
         if question.noteURL.isEmpty {
             Button(action: {
-           
+           edit = true
             }) {
                 HStack {
                     Image(systemName: "plus")
@@ -48,6 +49,9 @@ struct CorrectView: View {
                    }
             Spacer(minLength: 100)
         } .padding()
+            .sheet(isPresented: $edit) {
+                AddQuizNote(text: $question.reason)
+            }
     }
 }
 
