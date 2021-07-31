@@ -10,12 +10,12 @@ import SwiftUI
 struct QuizRowView: View {
     @Binding var quiz: Quiz
     @State var openQuiz = false
-    @State var showQuiz = false
+    @State var showQuiz:Bool = false
     @State var precentCorrect = 0.0
     @State var i = 0
     var body: some View {
         Button(action: {
-            openQuiz = true
+            showQuiz = true
         }) {
        
     
@@ -42,7 +42,7 @@ struct QuizRowView: View {
 //
         }
         }
-        .fullScreenCover(isPresented: $openQuiz) {
+        .fullScreenCover(isPresented: $showQuiz) {
             QuizView(quiz: quiz, i: $i, showQuiz: $showQuiz)
         }
     }

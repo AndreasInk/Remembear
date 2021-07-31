@@ -9,12 +9,12 @@ import SwiftUI
 import PencilKit
 struct ContentView: View {
     @State var i = 0
-    @State var quizzes = [Quiz(id: UUID().uuidString, title: "Hello", questions: [Question(id: UUID().uuidString, title: "Hellow", question: "World", answers: ["a", "B"], answer: "a", selected: "", reason: "", noteURL: "", tags: ["A"])]),Quiz(id: UUID().uuidString, title: "Hello", questions: [Question(id: UUID().uuidString, title: "Hellow", question: "World", answers: ["a", "B"], answer: "a", selected: "", reason: "", noteURL: "", tags: ["A"])]), Quiz(id: UUID().uuidString, title: "Hello", questions: [Question(id: UUID().uuidString, title: "Hellow", question: "World", answers: ["a", "B"], answer: "a", selected: "", reason: "", noteURL: "", tags: ["A"])])]
+    @State var quizzes = [Quiz]()
     @State var drawing: PKDrawing = PKDrawing()
     var body: some View {
        // NotesView(i: $i, drawing: $drawing)
         //QuizView(i: $i)
-       //QuizInputView()
+       // QuizInputView(quizzes: $quizzes)
         QuizListView(quizzes: $quizzes)
             .onAppear() {
                 let url = self.getDocumentsDirectory().appendingPathComponent("quizzes.txt")

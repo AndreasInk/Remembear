@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E137229F26AE747D008C8049 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137229E26AE747D008C8049 /* APIResponse.swift */; };
+		E13722A026AE747D008C8049 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137229E26AE747D008C8049 /* APIResponse.swift */; };
 		E18A74A526AD24CB0047C7B9 /* QuizInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A74A426AD24CB0047C7B9 /* QuizInputView.swift */; };
 		E18A74A626AD24CB0047C7B9 /* QuizInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A74A426AD24CB0047C7B9 /* QuizInputView.swift */; };
 		E18A74A826AD30880047C7B9 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A74A726AD30880047C7B9 /* NotesView.swift */; };
@@ -92,6 +94,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E137229E26AE747D008C8049 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		E18A74A426AD24CB0047C7B9 /* QuizInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizInputView.swift; sourceTree = "<group>"; };
 		E18A74A726AD30880047C7B9 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
 		E18A74AB26AD30B20047C7B9 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
@@ -238,6 +241,7 @@
 				E18A74E926AD54FE0047C7B9 /* AddQuizNote.swift */,
 				E1F5CFBC26ACFFC500FECAA7 /* QuizDetails.swift */,
 				E1F5CFBD26ACFFC500FECAA7 /* QuizData.swift */,
+				E137229E26AE747D008C8049 /* APIResponse.swift */,
 				E1F5CFBE26ACFFC500FECAA7 /* QuizQuestion.swift */,
 				E1F5CFBF26ACFFC500FECAA7 /* QuizBtn.swift */,
 				E1F5CFD526AD08E500FECAA7 /* ConfettiView.swift */,
@@ -404,6 +408,7 @@
 				E1F5CFCA26ACFFC500FECAA7 /* QuizBtn.swift in Sources */,
 				E1F5CFDC26AD0DDD00FECAA7 /* QuestionsView.swift in Sources */,
 				E1F5CFCD26AD001C00FECAA7 /* ButtonStyle.swift in Sources */,
+				E137229F26AE747D008C8049 /* APIResponse.swift in Sources */,
 				E1F5CFC626ACFFC500FECAA7 /* QuizData.swift in Sources */,
 				E1F5CFC026ACFFC500FECAA7 /* SlidestoQuizView.swift in Sources */,
 				E1F5CFD326AD056600FECAA7 /* Extensions.swift in Sources */,
@@ -431,6 +436,7 @@
 				E1F5CFCB26ACFFC500FECAA7 /* QuizBtn.swift in Sources */,
 				E1F5CFDD26AD0DDD00FECAA7 /* QuestionsView.swift in Sources */,
 				E1F5CFCE26AD001C00FECAA7 /* ButtonStyle.swift in Sources */,
+				E13722A026AE747D008C8049 /* APIResponse.swift in Sources */,
 				E1F5CFC726ACFFC500FECAA7 /* QuizData.swift in Sources */,
 				E1F5CFC126ACFFC500FECAA7 /* SlidestoQuizView.swift in Sources */,
 				E1F5CFD426AD056600FECAA7 /* Extensions.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Quiz: Identifiable, Codable, Hashable{
+struct Quiz: Identifiable, Codable, Hashable {
     var id: String
     var title: String
     var questions: [Question]
